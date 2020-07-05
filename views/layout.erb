@@ -45,7 +45,12 @@
 				      </li>
 				    </ul>
 				    <ul class="nav navbar-nav navbar-right">
-				    	<li><a href="#">Cart (...)</a></li>
+				    	<li>
+				    		<form action="/cart" mathod="post">
+				    			<input name="orders" type="text"/>
+				    			<input type="submit" class="btn btn-primary btn-lg" value="Cart(...)"/>
+				    		</form>
+				    	</li>
 				    </ul>
 				  </div>
 				</nav>
