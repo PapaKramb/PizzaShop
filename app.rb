@@ -20,8 +20,12 @@ end
 
 get '/cart' do
 	orders_input = params[:orders]
-	@orders = parse_orders_line orders_input
+	@items = parse_orders_input orders_input
 
+	@items.each do |item|
+		# id, cnt
+		item[0] = Product.find(item[0])
+	end
 
 	erb :cart
 end
@@ -31,7 +35,7 @@ end
 # 	erb "Hello1 #{orders_input}"
 # end
 
-def parse_orders_line orders_input
+def parse_orders_input orders_input
 
 		s1 = orders_input.split(/,/)
 
