@@ -19,5 +19,5 @@ get '/about' do
 end
 
 get '/cart' do
-	erb 'Hello!'
+	erb :cart
 end
