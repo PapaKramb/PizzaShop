@@ -1,0 +1,21 @@
+<h2>Страница со всеми заказами</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Delivery address</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @orders.each do |ord| %>
+ 	<tr>
+		<td><%= ord.name %></td>
+		<td><%= ord.phone %></td>
+		<td><%= ord.address %></td>
+	</tr>
+<% end %>
+</tbody>
+</table>

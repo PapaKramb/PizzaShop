@@ -40,7 +40,17 @@ end
 
 post '/place_order' do
 	@order = Order.new params[:order]
-	erb :cart
+	if @order.save
+		erb "Ваш заказ принят"
+	else
+		@error = @order..errors.full_messages.first
+		erb :cart
+	end
+end
+
+get '/orders' do
+	@orders = Order.all
+	erb :orders
 end
 # post '/cart' do
 # 	orders_input = params[:orders]
