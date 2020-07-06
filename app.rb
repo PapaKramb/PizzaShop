@@ -23,7 +23,7 @@ get '/cart' do
 	@orders = parse_orders_line orders_input
 
 
-	erb "Hello1 #{@orders.inspect}"
+	erb :cart
 end
 
 # post '/cart' do
