@@ -47,6 +47,7 @@ post '/place_order' do
 		@error = @order.errors.full_messages.first
 		erb :cart
 	end
+	erb :order_placed
 end
 
 get '/orders' do
