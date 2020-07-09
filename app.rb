@@ -33,10 +33,10 @@ get '/cart' do
 	erb :cart
 end
 
-get '/place_order' do
-	@order = Order.new
-	erb :cart
-end
+# get '/place_order' do
+# 	@order = Order.new
+# 	erb :cart
+# end
 
 post '/place_order' do
 	@order = Order.new params[:order]
