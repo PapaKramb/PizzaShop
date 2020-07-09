@@ -40,10 +40,11 @@ end
 
 post '/place_order' do
 	@order = Order.new params[:order]
+	# @order = Order.create params[:order] // не нужно прописывать метод .save, тем самым объект создается сразу в бд
 	if @order.save
 		erb "Ваш заказ принят"
 	else
-		@error = @order..errors.full_messages.first
+		@error = @order.errors.full_messages.first
 		erb :cart
 	end
 end
